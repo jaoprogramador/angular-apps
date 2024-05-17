@@ -1,0 +1,21 @@
+<br>
+<p>Bienvenido {{nombre}} a tu componente angular</p>
+<!--button id="idBotonAlerta" (click)="alertaSaludo()">Muestra el saludo</button-->
+<button id="idBotonAlerta" (click)="enviarMensajeAlPadre()">Enviar el saludo al componente padre</button>
+
+<!--h3 class="saludo" id="usuario" [innerText]="nombre"-->
+
+<!--Para mostrar colores segun condicion-->
+
+<h3 [ngClass]="nombre=='Anónimo' ? 'anonimo' : 'saludo'" id="usuario" [innerText]="nombre">
+<!--ponemos el valor de la varible a  niverl de propiedad con innerText-->
+</h3>
+<h4 [ngStyle]="{color:'orange'}">
+ngStyle SALUDO
+</h4>
+
+<p [ngStyle]="myStyle">
+    ngStyle SALUDO desde objeto
+</p>
+<!--Hacemos uso del componente ListaBasica del modulo Listas-->
+<app-lista-basica></app-lista-basica>
