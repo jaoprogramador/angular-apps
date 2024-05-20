@@ -9,15 +9,22 @@
       <p>Congratulations! Your app is running. 🎉</p>
     </div>
     <div class="divider" role="separator" aria-label="Divider">
-      <!--input para trabajar con el ngModel-->
-      <input type="text" placeholder="Nombre del usuario" [(ngModel)]="usuario">
-      <app-saludo [nombre]="usuario" (mesajeEmitter)="recibirMensajeHijo($event)"></app-saludo>
-      <app-saludo (mesajeEmitter)="recibirMensajeHijo($event)"></app-saludo>
-      <!--br>
+      <!--COMENTAMOS-->
+        <!--input para trabajar con el ngModel-->
+        <!--input type="text" placeholder="Nombre del usuario" [(ngModel)]="usuario">
+        <app-saludo [nombre]="usuario" (mesajeEmitter)="recibirMensajeHijo($event)"></app-saludo>
+        <app-saludo (mesajeEmitter)="recibirMensajeHijo($event)"></app-saludo-->
+      <!--COMENTAMOS/-->
+        <!--br>
       [nombre]="usuario"<br>
       <app-saludo [nombre]="usuario"></app-saludo>
       nombre="Guillermo"<br>
       <app-saludo nombre="Guillermo"></app-saludo-->
+      
+      <!--Ejemplo servicios-->
+        <app-lista-contactos></app-lista-contactos>
+        <!--Ejemplo de peticion http-->
+        <app-login-form></app-login-form>
       
       
 
