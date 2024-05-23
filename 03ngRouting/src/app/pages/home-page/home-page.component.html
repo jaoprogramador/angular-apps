@@ -1,12 +1,35 @@
 <h1>home-page </h1>
 <h3>Bienvenido!!</h3>
+<ng-container *ngIf="contactoSeleccionado" elseNoSeleccionado>
+    Contacto Seleccionado  {{contactoSeleccionado.nombre}}
+</ng-container>
+<ng-template #elseNoSeleccionado>
+    <div>
+        <p> Selecciona tu jugador preferido</p>
+    </div>
+</ng-template>
 <div>
     <!--Ir al login-->
-    <a routerLink="/login">Iniciar sesion</a>
+    <!--a routerLink="/login">Iniciar sesion</a-->
 </div>
 <div>
+    <!--hacer un login-->
+    <a *ngIf="!token" routerLink="/login">Iniciar sesion</a>
     <!-- Listar los contactos-->
     <button (click)="navegarAContacts()">Ver contactos</button>
 </div>
+    <br><br>
+    <!--Ejemplo QueryParams-->
+    <div>
+        <p>Filtros</p><br><br>
+        <a [routerLink]="['/contacts']" [queryParams]="{sexo:'hombre'}">
+            Jugadores Athletik
+        </a>
+        <br><br>
+        <a [routerLink]="['/contacts']" [queryParams]="{sexo:'mujer'}">
+            Jugadoras Athletik
+        </a>
+    </div>
+
 
 

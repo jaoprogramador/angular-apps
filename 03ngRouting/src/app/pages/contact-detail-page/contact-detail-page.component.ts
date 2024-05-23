@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IContacto } from '../../models/contact.interface';
 
 @Component({
   selector: 'app-contact-detail-page',
@@ -9,7 +10,17 @@ import { ActivatedRoute } from '@angular/router';
 
 export class ContactDetailPageComponent implements OnInit{
   id: any |undefined;
+  contacto: IContacto={
+    id: 0,
+    nombre: '',
+    apellidos: '',
+    email: '',
+    sexo:'',
+    edad: 0
+  };
+
   constructor(private route:ActivatedRoute) {}
+
   ngOnInit(): void {
     console.log('ContactDetailPageComponent::ngOnInit');
     //vamos a leer los parametros
@@ -20,6 +31,12 @@ export class ContactDetailPageComponent implements OnInit{
         }
       }
     )
-  }
+
+    //vamos a leer el state del contacto
+    if(history.state.data){
+      this.contacto=history.state.data
+    }
+  };
+  
 
 }
