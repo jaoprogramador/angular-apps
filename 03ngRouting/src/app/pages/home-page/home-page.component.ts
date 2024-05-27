@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
-import { IContacto } from '../../models/contact.interface';
+import { IRandomContact } from '../../models/randomUser';
+//import { IContacto } from '../../models/contact.interface';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -8,7 +9,8 @@ import { IContacto } from '../../models/contact.interface';
 })
 export class HomePageComponent implements OnInit{
   token : string | null = null;
-  contactoSeleccionado : IContacto | undefined;
+  //contactoSeleccionado : IContacto | undefined;
+  contactoSeleccionado : IRandomContact | undefined;
   constructor ( private router : Router){}
   ngOnInit(): void {
     //Comprobar si existe el token de sessionStorage

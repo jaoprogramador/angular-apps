@@ -1,0 +1,66 @@
+{
+    "results": [
+      {
+        "gender": "female",
+        "name": {
+          "title": "Ms",
+          "first": "Keya",
+          "last": "Mugeraya"
+        },
+        "location": {
+          "street": {
+            "number": 726,
+            "name": "Maharanipeta"
+          },
+          "city": "Imphal",
+          "state": "Puducherry",
+          "country": "India",
+          "postcode": 27710,
+          "coordinates": {
+            "latitude": "7.7905",
+            "longitude": "66.6688"
+          },
+          "timezone": {
+            "offset": "-12:00",
+            "description": "Eniwetok, Kwajalein"
+          }
+        },
+        "email": "keya.mugeraya@example.com",
+        "login": {
+          "uuid": "58e0176c-373d-4796-834c-f1beafd8a4ca",
+          "username": "silverwolf195",
+          "password": "darrel",
+          "salt": "CmZBLAbm",
+          "md5": "68ba30772b598af9806fd1d8cf9137de",
+          "sha1": "0cd61d692924f80508b2fe39657794720dd352b5",
+          "sha256": "48f80e92c94dfe6e5a4e00a7e66b8564bfb0a263e83833f5716563eadec4eca6"
+        },
+        "dob": {
+          "date": "1986-10-09T06:05:16.434Z",
+          "age": 37
+        },
+        "registered": {
+          "date": "2020-09-24T05:54:12.663Z",
+          "age": 3
+        },
+        "phone": "9856286375",
+        "cell": "9981068343",
+        "id": {
+          "name": "UIDAI",
+          "value": "525552988132"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/women/61.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/women/61.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/women/61.jpg"
+        },
+        "nat": "IN"
+      }
+    ],
+    "info": {
+      "seed": "5c9a960a9e74bc07",
+      "results": 1,
+      "page": 1,
+      "version": "1.4"
+    }
+  }

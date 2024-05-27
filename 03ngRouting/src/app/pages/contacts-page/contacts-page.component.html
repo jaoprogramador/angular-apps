@@ -1,11 +1,31 @@
 <h1>Tus contactos</h1>
 <!--Listamos los contactos para poder navegar a su detalle-->
-<div *ngFor="let contacto of listaContactos; let i=index">
-    <div>
+<!--div *ngFor="let contacto of listaContactos; let i=index"
+<div>
         <div routerLink="{{contacto.id}}" [state]="{data:contacto}">
             <h5>{{contacto.nombre}}</h5>
             <button (click)="irAlDetalle(contacto)">Detalle contacto</button>
         </div>
     </div>
+-->
+<div *ngFor="let contacto of listaRandomContacts; let i=index">
+    
+    <div routerLink="{{contacto.id.name}}" [state]="{data:contacto, filtro:filtroSexo}">
+        <h5>
+            {{contacto.name.first}} {{contacto.name.last}}
+        </h5>
+        <button (click)="irAlDetalle(contacto)">Detalle contacto</button>
+    </div>
+    
 </div>
+
+<ng-component *ngIf="filtroSexo=='female' || filtroSexo=='male'; else completo">
+    <p>Mostramos la lista filtrada por :"{{filtroSexo}}"</p>
+
+</ng-component>
+<ng-template #completo>
+    <p>Mostrando lista de contactos completo</p>
+</ng-template>
+
+<a routerLink="/home">Volver</a>
 

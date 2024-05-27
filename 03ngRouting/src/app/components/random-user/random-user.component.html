@@ -1,0 +1,41 @@
+<h2>random-user</h2>
+<!--ng-container *ngIf="randomContact;else noContact">
+    <h3 *ngIf="randomContact?.name">
+        {{ randomContact.name.title }} 
+        {{ randomContact.name.first }} 
+        {{ randomContact.name.last }}
+    </h3>
+</ng-container>
+<ng-template #noContact>
+    <h3>Cargando Contacto aleatorio...</h3>
+</ng-template-->
+
+<!---->
+<mat-card class="random-contact-card">
+    <mat-card-header>
+      <mat-card-subtitle>Contacto: </mat-card-subtitle>
+      <mat-card-title> 
+        {{ randomContact.name.title }} 
+        {{ randomContact.name.first }}  
+    </mat-card-title>
+    <div matCardAvatar>
+      <img [src]="randomContact.picture.thumbnail">
+    </div>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Residente en {{ randomContact.location.city }}<br>
+      {{ randomContact.location.country }}<br>
+      {{ randomContact.location.street }} {{ randomContact.location.postcode }}</p>
+      <p>{{ longText }}</p>
+      <mat-divider></mat-divider>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Elegir como representante</button>
+      <button mat-button>Volver a contactos</button>
+    </mat-card-actions>
+    <mat-card-footer>
+      <mat-progress-bar mode="indeterminate">
+        <mat-spinner></mat-spinner>
+      </mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>

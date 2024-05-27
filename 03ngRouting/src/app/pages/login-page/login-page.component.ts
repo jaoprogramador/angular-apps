@@ -9,8 +9,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginPageComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) {}
-  email: string ='';
-  password: string ='';
+  //email: string ='';
+  //password: string ='';
 
   ngOnInit(): void {
     let token =sessionStorage.getItem('token');
@@ -20,13 +20,16 @@ export class LoginPageComponent implements OnInit {
     }
     console.log('LoginPageComponent::ngOnInit');
   }
-  loginUser() {
-    this.authService.login( this.email ,this.password ).subscribe(
+  //loginUser(email: string ,password: string) {
+    loginUser(value: any) {
+      let {email,password} = value;
+    this.authService.login( email ,password ).subscribe(
       response => {
         console.log('LoginPageComponent::loginUser', response);
         if (response.token) {
           sessionStorage.setItem('token', response.token);
-          this.router.navigate(['contacts']);
+          //this.router.navigate(['contacts']);
+          this.router.navigate(['home']);
         } 
       },
       error => {

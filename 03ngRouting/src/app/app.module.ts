@@ -18,6 +18,11 @@ import { FormularioValidadoComponent } from './components/forms/formulario-valid
 //modulos de angular material
 import {MatFormFieldModule} from  '@angular/material/form-field';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MaterialModule } from './modules/material/material.module';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
+import { RandomUserComponent } from './components/random-user/random-user.component';
+import { RandomContactPageComponent } from './pages/random-contact-page/random-contact-page.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,11 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     FormularioComponent,
     FormularioAnidadoComponent,
     FormularioArrayComponent,
-    FormularioValidadoComponent    
+    FormularioValidadoComponent,
+    LoginFormComponent,
+    NombreCompletoPipe,
+    RandomUserComponent,
+    RandomContactPageComponent    
     //AuthService
   ],
   imports: [
@@ -43,8 +52,13 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     //importamos el modulo deReactive forms module para trabajar con formularios reactivos
     ReactiveFormsModule,
     //impoortamos los modulos de angular materials  para los inputs del form
-    MatFormFieldModule
+    MatFormFieldModule,
     //BrowserAnimationModule
+    //añadimos los formularios reactivos
+    ReactiveFormsModule,
+    //modulo personalizado de angular material
+    MaterialModule
+
     
     
   ],

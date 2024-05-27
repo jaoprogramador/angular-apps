@@ -1,4 +1,4 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,13 @@ import { FormularioArrayComponent } from './components/forms/formulario-array/fo
 import { FormularioValidadoComponent } from './components/forms/formulario-validado/formulario-validado.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { EjemploPipesComponent } from './components/ejemplo-pipes/ejemplo-pipes.component';
+import { MultiplicaPipe } from './pipes/multiplica.pipe';
+import { CalcularPuntuacionPipe } from './pipes/calcular-puntuacion.pipe';
+//LOCALE PARA PIPES
+import { registerLocaleData } from '@angular/common';
+import localeES from '@angular/common/locales/es';
+registerLocaleData(localeES);//registramos el LOCALE_ID de ES
 
 @NgModule({
   declarations: [
@@ -28,7 +35,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     FormularioComponent,
     FormularioAnidadoComponent,
     FormularioArrayComponent,
-    FormularioValidadoComponent
+    FormularioValidadoComponent,
+    EjemploPipesComponent,
+    MultiplicaPipe,
+    CalcularPuntuacionPipe
   ],
   imports: [
     BrowserModule,
@@ -42,7 +52,12 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatFormFieldModule
   ],
   providers: [
-    provideAnimationsAsync()
+    //registramos el locale para que salgan en español
+    {
+      provide: LOCALE_ID, useValue:'es'
+      //provideAnimationsAsync(), 
+    }
+    
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA] 

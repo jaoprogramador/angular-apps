@@ -6,6 +6,7 @@ import { ContactsPageComponent } from './pages/contacts-page/contacts-page.compo
 import { ContactDetailPageComponent } from './pages/contact-detail-page/contact-detail-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { AuthGuard } from './guards/auth.guard';
+import { RandomContactPageComponent } from './pages/random-contact-page/random-contact-page.component';
 
 const routes: Routes = [
   {//cuando vamos a la raiz del proyecto redireccioname a home
@@ -40,7 +41,11 @@ const routes: Routes = [
     component: ContactDetailPageComponent,
     canActivate:[AuthGuard]
   },
-
+  {
+    path: 'random',
+    component: RandomContactPageComponent,
+    canActivate:[AuthGuard]
+  },
   {
     path: '**',
     component: NotFoundPageComponent
