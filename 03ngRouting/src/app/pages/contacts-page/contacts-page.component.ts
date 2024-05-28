@@ -14,7 +14,7 @@ import { IRandomContact, Results } from '../../models/randomUser';
 export class ContactsPageComponent implements OnInit{
   
 
-  
+  cargando: boolean=true;
   filtroSexo: string = 'todos';
   //listaContactos: IContacto[] = [];
   listaRandomContacts: IRandomContact[] = [];
@@ -30,15 +30,17 @@ export class ContactsPageComponent implements OnInit{
 
     //obtener los QueryParams
     this.route.queryParams.subscribe((params:any) => {
-      console.log('QueryParams',params.sexo);
-      if(params.sexo){
+      console.log('QueryParams',params);
+      if(params){
         this.filtroSexo = params.sexo;
         if(params.sexo==='female' || params.sexo==='male'){
+          console.log('ContactsPageComponent::: ngOnInit Sexo:',params.sexo);
           this.randomContactService.obtenerListaRandom10ContactsSexo(10,params.sexo).subscribe({
             next: (response: Results) => {
               //console.log(response);
               response.results.forEach((randomContact: IRandomContact, index: number ) => {
                 this.listaRandomContacts.push(randomContact);
+                this.cargando=false;
               })
               console.log(this.listaRandomContacts);
             },
@@ -47,11 +49,13 @@ export class ContactsPageComponent implements OnInit{
           });
 
         }else{
+          console.log('ContactsPageComponent::: ngOnInit Sexo:',params.sexo);
           this.randomContactService.obtenerListaRandom10Contacts(10).subscribe({
             next: (response: Results) => {
               //console.log(response);
               response.results.forEach((randomContact: IRandomContact, index: number ) => {
                 this.listaRandomContacts.push(randomContact);
+                this.cargando=false;
               })
               console.log(this.listaRandomContacts);
             },
@@ -76,7 +80,7 @@ export class ContactsPageComponent implements OnInit{
     console.log('ContactsPageComponent::ngOnInit');
     if(history.state.data){
       console.log(history.state.data);
-      this.listaRandomContacts=history.state.data;
+      this.contactoSeleccionado=history.state.data;
     }
     //this.obtene10ContactosAleatorios();
       
@@ -107,7 +111,8 @@ export class ContactsPageComponent implements OnInit{
       }
     }
     //this.router.navigate(['/contacts/:id'],navigationExtras);
-    this.router.navigate(['/home'],navigationExtras);
+    //this.router.navigate(['/home'],navigationExtras);
+    this.router.navigate(['/dashboard'],navigationExtras);
   }
   //irAlDetalle(contacto: IContacto){
     irAlDetalle(contacto: IRandomContact){
@@ -117,7 +122,7 @@ export class ContactsPageComponent implements OnInit{
       }
     }
     //this.router.navigate(['/contacts/:id'],navigationExtras);
-    this.router.navigate(['/contacts', contacto.id], navigationExtras);
+    this.router.navigate(['/dashboard/contacts', contacto.id], navigationExtras);
 
     
   }

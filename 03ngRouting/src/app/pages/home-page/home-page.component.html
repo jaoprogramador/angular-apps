@@ -1,11 +1,11 @@
-<h1>home-page </h1>
+<h1>Juego Amigo Invisible </h1>
 <h3>Bienvenido!!</h3>
 <ng-container *ngIf="contactoSeleccionado" elseNoSeleccionado>
     Contacto Seleccionado  {{contactoSeleccionado.name.first}}
 </ng-container>
 <ng-template #elseNoSeleccionado>
     <div>
-        <p> Selecciona tu jugador preferido</p>
+        <p> Selecciona un amigo invisible</p>
     </div>
 </ng-template>
 
@@ -19,12 +19,12 @@
     <!--Ejemplo QueryParams-->
     <div>
         <p>Filtros</p><br><br>
-        <a [routerLink]="['/contacts']" [queryParams]="{sexo:'male'}">
-            Jugadores Athletik
+        <a [routerLink]="['/dashboard/contacts']" [queryParams]="{sexo:'male'}">
+            Amigos
         </a>
-        <br><br>
-        <a [routerLink]="['/contacts']" [queryParams]="{sexo:'female'}">
-            Jugadoras Athletik
+         | 
+        <a [routerLink]="['/dashboard/contacts']" [queryParams]="{sexo:'female'}">
+            Amigas
         </a>
     </div>
 

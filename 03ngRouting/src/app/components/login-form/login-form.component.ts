@@ -19,7 +19,7 @@ export class LoginFormComponent implements OnInit{
   ngOnInit(): void {
     console.log('Method not implemented.');
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.compose([Validators.required, Validators.email])], // Corregido uso de compose      
+      email: ['eve.holt@reqres.in', Validators.compose([Validators.required, Validators.email])], // Corregido uso de compose      
       password: ['', Validators.required]
     }
 

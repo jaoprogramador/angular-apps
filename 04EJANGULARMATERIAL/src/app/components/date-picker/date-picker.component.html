@@ -1,0 +1,62 @@
+<h3>Date Picker de Angular Material</h3>
+
+<form [formGroup]="formularioReserva">
+  <mat-form-field class="reserva-form-field">
+    <mat-label>Reserva tu Hotel</mat-label>
+    <mat-date-range-input
+      [rangePicker]="reservaPicker">
+      <input matStartDate placeholder="Desde" formControlName="desde">
+      <input matEndDate placeholder="Hasta" formControlName="hasta">
+    </mat-date-range-input>
+    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>    
+    <mat-datepicker-toggle matIconSuffix [for]="reservaPicker"></mat-datepicker-toggle>
+    <mat-date-range-picker #reservaPicker>
+      <mat-datepicker-actions>
+        <button mat-button color="warn" matDatepickerCancel>Cancelar</button>
+        <button mat-raised-button color="primary" matDatepickerApply>Guardar seleccion</button>
+      </mat-datepicker-actions>
+    </mat-date-range-picker>
+  </mat-form-field>
+</form>
+<!--mat-form-field class="reserva-form-field">
+    <mat-label>Reserva tu Hotel</mat-label>
+    <mat-date-range-input
+      [formGroup]="formularioReserva"
+      [rangePicker]="reservaPicker"
+      [comparisonStart]="formularioReserva.value.start"
+      [comparisonEnd]="formularioReserva.value.end">
+      <input matStartDate placeholder="Desde" formControlName="desde">
+      <input matEndDate placeholder="Hasta" formControlName="hasta">
+    </mat-date-range-input>
+    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>    
+    <mat-datepicker-toggle matIconSuffix [for]="reservaPicker"></mat-datepicker-toggle>
+    <mat-datepicker #reservaPicker>
+      <mat-datepicker-actions>
+        <button mat-button color="warning" matDatepickerCancel>Cancelar</button>
+        <button mat-raised-button color="primary" matDatepickerApply>Guardar seleccion</button>
+      </mat-datepicker-actions>
+    </mat-datepicker>
+    <mat-date-range-picker #reservaPicker></mat-date-range-picker>
+  </mat-form-field-->
+  
+  <!--mat-form-field class="example-form-field">
+    <mat-label>Fecha Hasta</mat-label>
+    <mat-date-range-input
+      [formGroup]="formularioReservaCierre"
+      [rangePicker]="reservaPickerCierre"
+      [comparisonStart]="formularioReservaCierre.value.start"
+      [comparisonEnd]="formularioReservaCierre.value.end">
+      <input matStartDate campaignTwoPicker="Desde" formControlName="desde">
+      <input matEndDate placeholder="Hasta" formControlName="hasta">
+    </mat-date-range-input>
+    <mat-datepicker-toggle matIconSuffix [for]="reservaPickerCierre"></mat-datepicker-toggle>
+    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="reservaPickerCierre"></mat-datepicker-toggle>
+    <mat-date-range-picker #reservaPickerCierre>
+      <mat-date-range-picker-actions>
+        <button mat-button matDateRangePickerCancel>Cancelar</button>
+        <button mat-raised-button color="primary" matDateRangePickerApply>Guardar seleccion</button>
+      </mat-date-range-picker-actions>
+    </mat-date-range-picker>
+    <mat-date-range-picker #reservaPickerCierre></mat-date-range-picker>
+  </mat-form-field-->

@@ -23,6 +23,16 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
 import { RandomUserComponent } from './components/random-user/random-user.component';
 import { RandomContactPageComponent } from './pages/random-contact-page/random-contact-page.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { TasksPagesComponent } from './pages/tasks-pages/tasks-pages.component';
+import { KabanTasksComponent } from './components/kaban-tasks/kaban-tasks.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -39,7 +49,11 @@ import { RandomContactPageComponent } from './pages/random-contact-page/random-c
     LoginFormComponent,
     NombreCompletoPipe,
     RandomUserComponent,
-    RandomContactPageComponent    
+    RandomContactPageComponent,
+    NavigationComponent,
+    DashboardComponent,
+    TasksPagesComponent,
+    KabanTasksComponent    
     //AuthService
   ],
   imports: [
@@ -57,7 +71,13 @@ import { RandomContactPageComponent } from './pages/random-contact-page/random-c
     //añadimos los formularios reactivos
     ReactiveFormsModule,
     //modulo personalizado de angular material
-    MaterialModule
+    MaterialModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    DragDropModule
 
     
     
