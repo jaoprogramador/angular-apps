@@ -1,7 +1,7 @@
 export enum LEVELS{
     "INFO",
     "URGENT",
-    ""
+    "BLOCKING"
 
 }
 export interface ITask{

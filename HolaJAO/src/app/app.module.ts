@@ -10,6 +10,7 @@ import { ListsModule } from './modules/lists/lists.module';
 import { ListaContactosComponent } from './components/lista-contactos/lista-contactos.component';
 import { HttpClientModule } from '@angular/common/http';
 //import { LoginComponent } from './components/forms/login/login.component';
+import {MatButtonModule} from '@angular/material/button';
 import { LoginFormComponent } from './components/forms/login-form/login-form.component';
 import { FormularioComponent } from './components/forms/formulario/formulario.component';
 import { FormularioAnidadoComponent } from './components/forms/formulario-anidado/formulario-anidado.component';
@@ -23,6 +24,9 @@ import { CalcularPuntuacionPipe } from './pipes/calcular-puntuacion.pipe';
 //LOCALE PARA PIPES
 import { registerLocaleData } from '@angular/common';
 import localeES from '@angular/common/locales/es';
+import { EjemploAnimacionComponent } from './components/ejemplo-animacion/ejemplo-animacion.component';
+import { ɵBrowserAnimationBuilder } from '@angular/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 registerLocaleData(localeES);//registramos el LOCALE_ID de ES
 
 @NgModule({
@@ -38,7 +42,8 @@ registerLocaleData(localeES);//registramos el LOCALE_ID de ES
     FormularioValidadoComponent,
     EjemploPipesComponent,
     MultiplicaPipe,
-    CalcularPuntuacionPipe
+    CalcularPuntuacionPipe,
+    EjemploAnimacionComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,10 @@ registerLocaleData(localeES);//registramos el LOCALE_ID de ES
     //importamos httpClienteModule para poder hacer llamadas http
     HttpClientModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatButtonModule,
+    //importamos el modulo de animaciones
+    BrowserAnimationsModule
   ],
   providers: [
     //registramos el locale para que salgan en español

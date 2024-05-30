@@ -1,0 +1,14 @@
+<div [@animaciones]='state' class="caja">
+    <h1>Ejemplo animación - {{ state }}</h1>
+    <button mat-raised-button color="info" (click)="cambiarEstadoActivado()">
+        {{state == 'active' ? 'Desactivar' : 'Activar'}}
+     </button>
+
+    <button mat-raised-button color="primary" (click)="subir()">Subir caja</button>
+    <!--button mat-raised-button color="primary" (click)="bajar()">Bajar caja</button-->
+    <button mat-raised-button color="warn" (click)="rotar()">Rotar caja</button>
+
+    <button mat-raised-button color="info" (click)="cambiarTamanio()">
+        {{state == 'ampliar' ? 'original' : 'ampliar'}}
+     </button>
+</div>

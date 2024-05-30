@@ -30,7 +30,7 @@ export class LoginPageComponent implements OnInit {
           sessionStorage.setItem('token', response.token);
           //this.router.navigate(['contacts']);
           //this.router.navigate(['home']);
-          this.router.navigate(['/']);
+          this.router.navigate(['/dashboard']);
         } 
       },
       error => {
