@@ -1,0 +1,18 @@
+<h1>Contacto ID:{{id}}</h1>
+
+<!--ng-container *ngIf="contacto.email; else elseTemplate"-->
+<ng-container *ngIf="contacto; else elseTemplate">    
+    <h3>Nombre Completo: {{contacto | nombreCompleto}}</h3>
+    <!--h3>Nombre: {{contacto.nombre}}</h3>
+    <h3>Apellidos: {{contacto.apellidos}}</h3-->
+    <h3>email: {{contacto.email}}</h3>
+    <h3>edad: {{contacto.dob.age}}</h3>
+    <h3>sexo: {{contacto.gender}}</h3>
+</ng-container>    
+<ng-template #elseTemplate>
+    <p>Error en el contacto</p>
+
+</ng-template>
+<a routerLink="/dashboard/contacts" [queryParams]="{sexo:'todos'}">volver</a>
+
+

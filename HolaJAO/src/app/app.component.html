@@ -1,14 +1,11 @@
-
-
-
 <main class="main">
   <div class="content">
-    <div class="left-side">
+    <!--div class="left-side">
       
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
     </div>
-    <div class="divider" role="separator" aria-label="Divider">
+    <div class="divider" role="separator" aria-label="Divider"-->
       <!--COMENTAMOS-->
         <!--input para trabajar con el ngModel-->
         <!--input type="text" placeholder="Nombre del usuario" [(ngModel)]="usuario">
@@ -23,21 +20,60 @@
       
       <!--Ejemplo servicios-->
         <!--app-lista-contactos></app-lista-contactos-->
-        <!--Ejemplo de peticion http-->
+
+        <!--Ejemplo de peticion http-->        
         <!--app-login-form></app-login-form-->
+        
         <!--Ejemplo de formularios reactivos-->
         <!--app-formulario></app-formulario-->
         <!--app-formulario-anidado></app-formulario-anidado-->
         <!--app-formulario-array></app-formulario-array-->
         <!--app-formulario-validado></app-formulario-validado-->
+        
         <!--Ejemplos con PIPES-->
         <!--app-ejemplo-pipes></app-ejemplo-pipes-->
         <!--Ejemplo de uso de animaciones-->
-        <app-ejemplo-animacion></app-ejemplo-animacion>
+        <!--app-ejemplo-animacion></app-ejemplo-animacion-->
+     
+        <!--EJEMPLOS CHANGE DETECTION   -->   
+        <!--============================-->
       
+        <!--Ejemplo Change Detection: Estrategia Default/onPush
+          ========================================================
+        <app-on-push></app-on-push-->
+        
+        <!--Ejemplo Change Detection: metodos detach y detect changes
+          =============================================================
+            <app-detach></app-detach-->
+        
+        <!--Ejemplo Change Detection: metodos detach y reatach
+          ===========================================================
+            <app-reattach [enVivo]="live"></app-reattach>
+            <h5>Mostrar precio Bitcoin en vivo?</h5>
+            <input type="checkbox" [(ngModel)]="live"/-->
+
+        <!--Ejemplo de uso de Angular Zone {ngZone}
+        ==============================================
+            <app-ng-zone>
+
+            </app-ng-zone-->
+        
+        <!-- EJEMPLO 5: Async Pipe 
+        =============================
+        <button (click)="anadir()">Añadir Número Aleatorio</button>
+        <app-async-pipe [item$]="numero$"></app-async-pipe-->
+
+        <!--EJEMPLOS DIRECTIVAS   -->   
+        <!--============================-->
+        <!-- Ejemplo Directiva Atributo ATTR 
+        <app-ejemplo-attr></app-ejemplo-attr-->
+
+      <!-- Ejemplo Directiva Estructural -->
+      <app-ejemplo-struct></app-ejemplo-struct> 
+
       
 
-    </div>
+    
     
   </div>
 </main>

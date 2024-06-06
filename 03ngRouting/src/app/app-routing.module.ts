@@ -9,6 +9,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { RandomContactPageComponent } from './pages/random-contact-page/random-contact-page.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { TasksPagesComponent } from './pages/tasks-pages/tasks-pages.component';
+import { InfoComponent } from './components/info/info.component';
+import { ContactsTableComponent } from './pages/contacts-table/contacts-table.component';
 
 const routes: Routes = [
   {//cuando vamos a la raiz del proyecto redireccioname a home
@@ -33,6 +35,12 @@ const routes: Routes = [
     
       },
       {
+        path: 'contactsTable',
+        component: ContactsTableComponent,
+        canActivate:[AuthGuard]
+    
+      },
+      {
         path: 'contacts/:id',
         component: ContactDetailPageComponent,
         canActivate:[AuthGuard]
@@ -45,6 +53,13 @@ const routes: Routes = [
       {
         path: 'tasks',
         component: TasksPagesComponent,
+        canActivate:[AuthGuard]
+    
+      },
+  
+      {
+        path: 'info',
+        component: InfoComponent,
         canActivate:[AuthGuard]
     
       },

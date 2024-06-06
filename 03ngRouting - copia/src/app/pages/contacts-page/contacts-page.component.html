@@ -1,0 +1,36 @@
+<h1>Tus contactos</h1>
+<div *ngIf="cargando">
+    <mat-spinner></mat-spinner>
+</div>
+<!--Listamos los contactos para poder navegar a su detalle-->
+<!--div *ngFor="let contacto of listaContactos; let i=index"
+<div>
+        <div routerLink="{{contacto.id}}" [state]="{data:contacto}">
+            <h5>{{contacto.nombre}}</h5>
+            <button (click)="irAlDetalle(contacto)">Detalle contacto</button>
+        </div>
+    </div>
+-->
+<!--Listar contactos y poder navegar a su detalle-->
+<div *ngFor="let contacto of listaRandomContacts; let i=index">
+    
+    <div class="hover-link" 
+        routerLink="{{contacto.id.name}}" [state]="{data:contacto, filtro:filtroSexo}">
+        <h5>
+            {{contacto.name.first}} {{contacto.name.last}}
+        </h5>
+        <button mat-raised-button color='primary' (click)="irAlDetalle(contacto)">Detalle contacto</button>
+    </div>
+    
+</div>
+
+<ng-component *ngIf="filtroSexo=='female' || filtroSexo=='male'; else completo">
+    <p>Mostramos la lista filtrada por :"{{filtroSexo}}"</p>
+
+</ng-component>
+<ng-template #completo>
+    <p>Mostrando lista de contactos completo</p>
+</ng-template>
+
+<a routerLink="/dashboard">Volver</a>
+

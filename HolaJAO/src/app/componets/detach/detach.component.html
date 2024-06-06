@@ -1,0 +1,14 @@
+<h2>Ejemplo Change Detection Strategy Default + Detach + DetectChanges</h2>
+<div>
+    <h3>Nombres aleatorios</h3>
+    <!--
+        Al estar consumiendo una funcion getter, que devuelve constantemente
+        nuevos nombres, el metodo DETACH y DETECHCHANGES nos asegura que se 
+        actualice sin saturar al usuario
+    -->
+    <li *ngFor="let nombre of dataListProvider.data">
+        Nombre: {{nombre}}
+      </li>
+      
+</div>
+

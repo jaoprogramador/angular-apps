@@ -27,6 +27,17 @@ import localeES from '@angular/common/locales/es';
 import { EjemploAnimacionComponent } from './components/ejemplo-animacion/ejemplo-animacion.component';
 import { ɵBrowserAnimationBuilder } from '@angular/animations';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { OnPushComponent } from './componets/on-push/on-push.component';
+import { DataListProvider, DetachComponent } from './componets/detach/detach.component';
+import { PrecioBitCoinProvider, ReattachComponent } from './componets/reattach/reattach.component';
+import { NgZoneComponent } from './componets/ng-zone/ng-zone.component';
+import { AsyncPipeComponent } from './componets/async-pipe/async-pipe.component';
+import { EjemploAttrComponent } from './components/ejemplo-attr/ejemplo-attr.component';
+import { EjemploStructComponent } from './components/ejemplo-struct/ejemplo-struct.component';
+import { EjemploLifeCycleComponent } from './components/ejemplo-life-cycle/ejemplo-life-cycle.component';
+import { AttrDirective } from './directives/attr.directive';
+import { StructDirective } from './directives/struct.directive';
+import { LifeCycleDirective } from './directives/life-cycle.directive';
 registerLocaleData(localeES);//registramos el LOCALE_ID de ES
 
 @NgModule({
@@ -43,7 +54,18 @@ registerLocaleData(localeES);//registramos el LOCALE_ID de ES
     EjemploPipesComponent,
     MultiplicaPipe,
     CalcularPuntuacionPipe,
-    EjemploAnimacionComponent
+    EjemploAnimacionComponent,
+    OnPushComponent,
+    DetachComponent,
+    ReattachComponent,
+    NgZoneComponent,
+    AsyncPipeComponent,
+    EjemploAttrComponent,
+    EjemploStructComponent,
+    EjemploLifeCycleComponent,
+    AttrDirective,
+    StructDirective,
+    LifeCycleDirective
   ],
   imports: [
     BrowserModule,
@@ -57,13 +79,17 @@ registerLocaleData(localeES);//registramos el LOCALE_ID de ES
     MatFormFieldModule,
     MatButtonModule,
     //importamos el modulo de animaciones
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
   ],
   providers: [
+    DataListProvider,
+    PrecioBitCoinProvider,
     //registramos el locale para que salgan en español
     {
       provide: LOCALE_ID, useValue:'es'
       //provideAnimationsAsync(), 
+      
     }
     
   ],

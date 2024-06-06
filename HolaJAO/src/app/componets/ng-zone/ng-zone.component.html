@@ -1,0 +1,25 @@
+<div>
+    <h1>Ejemplo de angular zone</h1>
+    <p>Proceso de incremento se puede ejecutar dentro/fuera de angular zone</p>
+    <p>Implicando que los cambios del proceso se vean o no hasta que se indique</p>
+
+    <div>
+        <h3>Progreso Actual: {{progreso }}</h3>
+        <h4 *ngIf="progreso >= 100">
+            Proceso terminado: {{texto}} de Angular Zone</h4>
+    </div>
+
+    <div>
+        <button (click)="procesarDentroAngularZone()">
+            Aumentar DENTRO de NgZone
+        </button>
+    </div>
+
+    <div>
+        <button (click)="procesarFueraAngularZone()">
+            Aumentar FUERA de NgZone
+        </button>
+
+    </div>
+
+</div>

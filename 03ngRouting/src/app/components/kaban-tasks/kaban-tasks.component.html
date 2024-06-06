@@ -50,8 +50,8 @@
     <ng-container *ngIf="todoTasks.length===0;">
       <h4 class="msg-enhorabuena">Enhorabuena!!!No tienes tareas pendientes</h4>
     </ng-container> 
-      <div class="list-item" *ngFor="let task of todoTasks" cdkDrag >
-        <app-task [task]="task"></app-task>
+      <div appMouseOver="tomato" defaultColor="lightgreen" class="list-item" *ngFor="let task of todoTasks" cdkDrag >
+        <app-task  appLifeCycle [task]="task"></app-task>
         <!--div [ngClass]="
               {'info-Task': task.level===0,
               'urgent-Task': task.level===1,
@@ -74,8 +74,11 @@
       <ng-container *ngIf="doneTasks.length===0; ">
         <h4 class="msg-trabajar">No tienes tareas completadas: AL TURRÓN</h4>
       </ng-container>
-      <div class="list-item" *ngFor="let task of doneTasks" cdkDrag >
-        <app-task [task]="task"></app-task>
+      
+      <div appMouseOver="lightgreen" defaultColor="lightgreen" [ngClass]="{'completed-task': task.completed}" class="list-item" *ngFor="let task of doneTasks" cdkDrag >
+        <!--ahora tenemos la informacion del cliclo de vida de cada una de las tareas 
+        que renderizamos-->
+        <app-task appLifeCycle [task]="task"></app-task>
         <!--div [ngClass]="
             {'info-Task': task.level===0,
             'urgent-Task': task.level===1,

@@ -1,0 +1,23 @@
+<div>
+    <h1>Ejemplo Directiva Atributo</h1>
+    <p>El atributo de color de fondo va a cambiar gracias a la directiva Attr</p>
+  
+    <div>
+      <h2>
+        Selecciona el color con el que subrayar
+      </h2>
+      <input type="radio" name="colors" (click)="color='yellow'" /> Amarillo
+      <input type="radio" name="colors" (click)="color='lightgreen'" /> Verde
+      <input type="radio" name="colors" (click)="color='cyan'" /> Azul
+    </div>
+  
+    <div>
+      <p [appHighlight]="color">
+        texto para probar la directiva sin default color
+      </p>
+      <p [appHighlight]="color" defaultColor="violet">
+        texto para probar la directiva con default color
+      </p>
+    </div>
+  </div>
+  

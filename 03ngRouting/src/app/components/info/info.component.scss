@@ -1,0 +1,57 @@
+.mat-tab-group {
+    margin-bottom: 48px;
+}
+
+/* Contenedor común para todas las pestañas */
+.tab-content {
+    padding: 10px;
+    background-color: #E3F2FD;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    max-width: 600px; /* Fija el ancho máximo de todas las pestañas */
+    margin: 0 auto; /* Centra el contenido */
+    text-align: center; 
+}
+
+/* Estilo del contenido específico de la pestaña "Descripción de la aplicación" */
+.desc {
+    max-width: 600px; /* Ajusta según sea necesario */
+}
+
+/* Estilo de las listas */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    padding: 5px 0;
+    margin: 5px 0;
+    border-bottom: 1px solid #BBDEFB;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+ul li ul li {
+    padding-left: 20px;
+    border-bottom: none;
+}
+
+/* Estilo de los párrafos en la descripción */
+.desc p {
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* Estilo de enlaces (si se añaden en el futuro) */
+a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

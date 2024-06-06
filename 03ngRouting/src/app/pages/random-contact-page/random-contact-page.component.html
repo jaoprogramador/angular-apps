@@ -2,3 +2,46 @@
 <!--Boton genera aleatorio-->
 <button mat-raised-button color="primary" (click)="obtenerNuevoContacto()" mat-raised-button color="Primary">Generar contacto aleatorio</button>
 <button mat-raised-button color="primary"  (click)="obtene10ContactosAleatorios(10)" mat-raised-button color="Primary">Generar 10 contactos aleatorios</button>
+<!--button mat-raised-button color="primary"  (click)="obtener10Aleatorios()" mat-raised-button color="Primary">Crear Tabla</button-->
+
+
+<!--ng-container *ngIf="listaRandomContacts.length===0; else contactosAleatorios">
+    <p>Sin Usuario Aleatorios</p>
+</ng-container>
+<ng-template #contactosAleatorios>
+    <div *ngFor="let contacto of listaRandomContacts; let i=index">
+        <p> {{contacto.name}} {{contacto.email}}</p-->
+        <!--TABLA-->
+        <!--======
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+            <ng-container matColumnDef="demo-position">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+          
+
+            <ng-container matColumnDef="demo-name">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+          
+
+            <ng-container matColumnDef="demo-weight">
+              <th mat-header-cell *matHeaderCellDef> Weight </th>
+              <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+            </ng-container>
+          
+
+            <ng-container matColumnDef="demo-symbol">
+              <th mat-header-cell *matHeaderCellDef> Symbol </th>
+              <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+
+    
+</ng-template-->

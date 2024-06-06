@@ -16,7 +16,7 @@
         <form [formGroup]="loginForm" (submit)="submitLogin()">
             <!--EMAIL-->
             <mat-form-field>
-                <input matInput placeholder="Email" formControlName="email" value="eve.holt@reqres.in">
+                <input matInput placeholder="Email" formControlName="email" value="eve.holt@reqres.in" >
                 <mat-error *ngIf="email?.errors?.['required'] && email?.touched">
                     El campo email es obligatorio
                 </mat-error>
@@ -27,7 +27,7 @@
             </mat-form-field>
             <!--PASSWROD-->
             <mat-form-field>
-                <input matInput placeholder="Password" formControlName="password">
+                <input matInput placeholder="Password" formControlName="password" type="password">
                 <mat-error *ngIf="password?.errors?.['required'] && password?.touched">
                     El campo email es obligatorio
                 </mat-error>

@@ -1,0 +1,19 @@
+<h2>Ejemplo de Uso de ASYNC PIPE</h2>
+
+<!--
+  Pipe ASYNC: Otorga el valor futuro al elemento a partir
+  del Observable sobre el que se ejecuta.
+  Cada next() que se ejecuta nos envía un nuevo valor
+  que el pipe async gestiona una vez se complete
+-->
+<div *ngFor="let item of item$ | async">
+  {{item}}
+</div>
+
+
+<p>
+  Este componente recibe un Observable (Behaviour Subject) como INPUT
+  que va a ir mandando nuevos valores y éste actualizará su vista con el
+  último valor enviado desde el padre a través del Observable
+</p>
+

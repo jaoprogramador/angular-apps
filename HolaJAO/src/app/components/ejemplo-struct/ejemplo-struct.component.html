@@ -1,0 +1,24 @@
+<div>
+    <h1>Ejemplo Directiva Estructural</h1>
+    <div>
+      <h2>El contenido será únicamente visible si ROL es true</h2>
+      <!-- Ejemplo de uso de directiva con * -->
+      <p *rolCorrecto="rol">
+        Ejemplo básico: Contenido oculto para los que no tienen el rol
+      </p>
+      <ng-template [rolCorrecto]="rol" #bloqueParaRol>
+        <p>
+          Ejemplo con ngTemplate:
+        </p>
+        <p>
+          Contenido oculto para los que no tienen el rol
+        </p>
+      </ng-template>
+    </div>
+    <div>
+      <button (click)="cambiarRol()">
+        {{ !rol ? 'MOSTRAR' : 'OCULTAR'}}
+      </button>
+    </div>
+  </div>
+  

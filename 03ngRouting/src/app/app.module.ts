@@ -27,13 +27,26 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
+//import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { TasksPagesComponent } from './pages/tasks-pages/tasks-pages.component';
 import { KabanTasksComponent } from './components/kaban-tasks/kaban-tasks.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { TaskComponent } from './components/task/task.component';
+import { InfoComponent } from './components/info/info.component';
+import {MatTabsModule} from '@angular/material/tabs';
+
+
+import { LifeCycleDirective } from './directives/life-cycle.directive';
+import { MouseOverDirective } from './directives/mouse-over.directive';
+import { ContactsTableComponent } from './pages/contacts-table/contacts-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+
+
+
 
 @NgModule({
   declarations: [
@@ -55,7 +68,11 @@ import { TaskComponent } from './components/task/task.component';
     DashboardComponent,
     TasksPagesComponent,
     KabanTasksComponent,
-    TaskComponent    
+    TaskComponent,
+    InfoComponent,    
+    LifeCycleDirective, 
+    MouseOverDirective//, 
+    //ContactsTableComponent    
     //AuthService
   ],
   imports: [
@@ -77,9 +94,14 @@ import { TaskComponent } from './components/task/task.component';
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
-    MatIconModule,
+    //MatIconModule,
     MatListModule,
-    DragDropModule
+    DragDropModule,
+    MatTabsModule,
+    MatTableModule,
+    //MatPaginator,
+    MatPaginatorModule,
+    MatSort
 
     
     

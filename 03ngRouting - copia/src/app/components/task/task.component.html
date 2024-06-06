@@ -1,0 +1,9 @@
+<div [ngClass]="
+    {'info-Task': task.level===0,
+    'urgent-Task': task.level===1,
+    'blockin-Task': task.level===2,
+    'completed-Task': task.completed,
+    }">
+    <h2>{{task.title}}</h2>
+    <h3>{{task.description}}</h3>
+</div>     

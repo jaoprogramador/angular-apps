@@ -2,13 +2,24 @@ import { Component, OnInit } from '@angular/core';
 import { RandomUserService } from '../../services/random-user.service';
 import { IRandomContact, Results } from '../../models/randomUser';
 
+
+
+
+
+
 @Component({
   selector: 'app-random-contact-page',
   templateUrl: './random-contact-page.component.html',
   styleUrls: ['./random-contact-page.component.scss']
+
+
 })
+
+
 export class RandomContactPageComponent implements OnInit {
+
   constructor(private randomUserService: RandomUserService) {}
+  listaRandomContacts: IRandomContact[] = [];
 
   contact: IRandomContact = {
     gender: '',
@@ -62,10 +73,27 @@ export class RandomContactPageComponent implements OnInit {
       complete: () => console.info(`Peticion de random contact terminada`)
     });
   }
+  obtener10Aleatorios(){
+    this.randomUserService.obtenerListaRandom10Contacts(10).subscribe({
+      next: (response: Results) => {
+        //console.log(response);
+        response.results.forEach((randomContact: IRandomContact, index: number ) => {
+          this.listaRandomContacts.push(randomContact);
+          console.log(this.listaRandomContacts);  
+          
+        })
+        
+      },
+      error: (error) => console.error(`${error}`),
+      complete: () => console.info(`Peticion de random contact terminada`)
+    });
+  }
   obtene10ContactosAleatorios(num : number): void {
     console.log('RandomContactPageComponent:::obtenerNuevoContacto');
     this.randomUserService.obtenerListaRandomContacts(num).subscribe({
       next: (response: Results[]) => {
+        //QUIRO CARGANLO AQUI
+
         console.log(response);
       },
       error: (error) => console.error(`${error}`),
