@@ -9,8 +9,8 @@
       <a mat-list-item href="#">Link 2</a>
       <a mat-list-item href="#">Link 3</a-->
       <a mat-list-item routerLink="/home">Home</a>
-      <a mat-list-item routerLink="/profile">Profile</a>
-      <a mat-list-item routerLink="/auth">Login</a>
+      <a mat-list-item routerLink="/profile" (mouseover)="cargarModulo('profile')">Profile</a>
+      <a mat-list-item routerLink="/auth" (mouseover)="cargarModulo('auth')">Login</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -24,7 +24,10 @@
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button>
       }
-      <span>04ngModules</span>
+      <span>Carga perezosa y Sistemas de Precarga de modulos en Angular</span>
+      <!--button (click)="cargarModulo('profile')">Precargar Modulo Profile</!--button>
+      <button-- (click)="cargarModulo('auth')">Precargar Modulo Auth</button-->
+      <button mat-button color="warm"  (click)="cargarModuloTODOS()">Precargar TODOS los Modulo</button>
     </mat-toolbar>
     <!-- Add Content Here -->
     <!--Sistema de enroutado de los modulos cargados de forma perezosa-->
