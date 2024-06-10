@@ -305,8 +305,9 @@
       <a mat-list-item [routerLink]="['/']">Amigo Invisible</a><!--link a la raiz del proyecto-->
       <a mat-list-item [routerLink]="['/dashboard/tasks']">Tareas</a>
       <a mat-list-item [routerLink]="['/dashboard/random']">Contacto Aleatorio</a>
+      <a mat-list-item [routerLink]="['/dashboard/firestore']" (mouseover)="precargaModulo('firestore')">Tienda</a>
       <a mat-list-item [routerLink]="['/dashboard/info']">Info</a>
-      <a mat-list-item (click)="loggOut()">LogOut</a>
+      <a mat-list-item (click)="logout()">LogOut</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

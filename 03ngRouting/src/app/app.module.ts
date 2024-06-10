@@ -44,6 +44,7 @@ import { ContactsTableComponent } from './pages/contacts-table/contacts-table.co
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { OnDemandPreloadStrategy } from './routes/preloading-strategies/on-demand-preloading-strategy';
 
 
 
@@ -107,7 +108,8 @@ import { MatSort } from '@angular/material/sort';
     
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    OnDemandPreloadStrategy
   ],
   bootstrap: [AppComponent],
   schemas: [

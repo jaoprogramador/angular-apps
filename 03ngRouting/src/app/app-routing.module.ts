@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadingStrategy, RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { ContactsPageComponent } from './pages/contacts-page/contacts-page.component';
@@ -11,6 +11,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { TasksPagesComponent } from './pages/tasks-pages/tasks-pages.component';
 import { InfoComponent } from './components/info/info.component';
 import { ContactsTableComponent } from './pages/contacts-table/contacts-table.component';
+import { OnDemandPreloadStrategy } from './routes/preloading-strategies/on-demand-preloading-strategy';
 
 const routes: Routes = [
   {//cuando vamos a la raiz del proyecto redireccioname a home
@@ -22,7 +23,7 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent
-  },  
+  },    
   {
     path: 'dashboard',
     component: DashboardComponent,
@@ -64,6 +65,14 @@ const routes: Routes = [
     
       },
       {
+        path: 'firestore',
+        loadChildren: () => import('./modules/pages/fire-store/fire-store.module').then(m => m.FireStoreModule),
+        canActivate:[AuthGuard],
+        data: {
+          preload: true
+        }
+      },
+      {
         path: '',
         component: HomePageComponent/*,
         children:[
@@ -82,10 +91,17 @@ const routes: Routes = [
     path: '**',
     component: NotFoundPageComponent
   }
+  
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,
+    {
+      preloadingStrategy: OnDemandPreloadStrategy
+
+    }
+    
+  )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

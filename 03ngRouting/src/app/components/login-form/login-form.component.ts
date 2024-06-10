@@ -20,7 +20,7 @@ export class LoginFormComponent implements OnInit{
     console.log('Method not implemented.');
     this.loginForm = this.formBuilder.group({
       email: ['eve.holt@reqres.in', Validators.compose([Validators.required, Validators.email])], // Corregido uso de compose      
-      password: ['', Validators.required]
+      password: ['clave123', Validators.required]//harcodeamos la clave
     }
 
     )
