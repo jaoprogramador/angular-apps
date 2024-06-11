@@ -37,7 +37,7 @@ app0
         --->home 2
         --->settings 2
 
-COMANDOS para WORKSPACE
+## COMANDOS para WORKSPACE
 ========================
 	ng new 05ngWorkpsace --create-aplication false
 crear aplicacion dentro workspace                            --ng new 03ngRouting --no-standalone --routing --ssr=false

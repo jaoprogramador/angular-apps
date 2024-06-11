@@ -309,7 +309,8 @@
       }
     }
 
-  },
+  },  
+  "defaultProject": "app0",
   "cli": {
     "analytics": false
   }
