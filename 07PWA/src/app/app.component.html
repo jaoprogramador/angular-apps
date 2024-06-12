@@ -1,0 +1,23 @@
+<main class="main">
+  <div class="content">
+    <h1>Mi primera PWA con peticiones HTTP cacheadas</h1>
+    <div *ngIf="strChiste">
+      <h2>Chiste Chuck:</h2>
+      <h4 class="chiste">{{strChiste}}</h4>
+    </div>
+   
+
+    <button (click)="obtenerNuevoChiste()">Obtener nuevo chiste</button>
+  </div>
+</main>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced.  * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<router-outlet />

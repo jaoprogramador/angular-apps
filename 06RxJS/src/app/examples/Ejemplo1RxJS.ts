@@ -1,4 +1,4 @@
-import { fromEvent, Observable, of, Subscription, interval, take, zip, map } from 'rxjs';
+import { fromEvent, Observable, of, Subscription, interval, take, zip, map, zipAll } from 'rxjs';
 
 
 //of(true,2, 4, 'Juan');
@@ -70,15 +70,9 @@ observable.pipe(
 
 
 const timer$ = interval(1000);
-const pieces$ = of('', '♞', '', '♞', '♘', '♞');
-const columns$ = of('e', 'c', 'g', 'd', 'e', 'f');
-const rows$ = of('4', '6', '4', '4', '2', '3');
+const pieces$ : Observable<string> = of('', '♞', '', '♞', '♘', '♞');
+const columns$ : Observable<string> = of('e', 'c', 'g', 'd', 'e', 'f');
+const rows$ : Observable<string> = of('4', '6', '4', '4', '2', '3');
 
-timer$.pipe(
-  zip(
-    pieces$,
-    columns$,
-    rows$
-  ),
-  map(([_, piece, column, row]) => `${piece}${column}${row}`)
-)
+
+//******************EJEMPLO 6 agrupacion de valores*/
