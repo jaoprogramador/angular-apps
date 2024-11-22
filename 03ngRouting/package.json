@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "localDeploy:prod": "npm run build && cd dist/03ng-routing && serve",
     "firebase:deploy": "npm run build && firebase deploy",
+    "AWS:deploy": "aws s3 sync ./browser s3://jao-bucket19062024",
     "test": "ng test",
     "lint": "ng lint"
   },
