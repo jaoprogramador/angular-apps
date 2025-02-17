@@ -1,3 +1,10 @@
 <div class="card">
-    <p-menubar [model]="menuItems" />
+    <p-menubar [model]="menuItems" >
+        <form [formGroup]="formGroup">
+            <p-autocomplete formControlName="selectHero" 
+            [suggestions]="filteredHeroes" 
+            (completeMethod)="filterHero($event)" field="superhero" />
+        </form>
+    </p-menubar>
+
 </div>

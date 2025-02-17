@@ -8,6 +8,7 @@ import { PaginacionComponent } from './paginacion/paginacion.component';
 /* import { SharedModule } from '../shared/shared.module';
 
  */
+import { PrimengModule } from '../primeng/primeng.module';
 @NgModule({
   declarations: [
     HeroesComponent,
@@ -16,8 +17,9 @@ import { PaginacionComponent } from './paginacion/paginacion.component';
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule/* ,
+    PagesRoutingModule,/* ,
     SharedModule */
+    PrimengModule
   ],
   
 })

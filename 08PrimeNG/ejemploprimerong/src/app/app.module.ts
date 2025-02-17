@@ -31,7 +31,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { ButtonModule } from 'primeng/button';
 import { MenuComponent } from './shared/menu/menu.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent
@@ -42,7 +42,8 @@ import { MenuComponent } from './shared/menu/menu.component';
     AppRoutingModule,
     ButtonModule,
     SharedModule  ,
-    MenuComponent  
+    MenuComponent,
+    HttpClientModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
